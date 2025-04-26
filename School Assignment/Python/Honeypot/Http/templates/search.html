@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Kết quả tìm kiếm{% endblock %}
+
+{% block content %}
+<h3>Kết quả tìm kiếm cho "{{ query }}":</h3>
+<ul>
+    {% for result in results %}
+        <li>
+            <a href="{{ url_for('post', post_id=result.id) }}">{{ result.title }}</a>
+        </li>
+    {% else %}
+        <li>Không tìm thấy kết quả phù hợp</li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('dashboard') }}">Quay lại Dashboard</a>
+{% endblock %}
+

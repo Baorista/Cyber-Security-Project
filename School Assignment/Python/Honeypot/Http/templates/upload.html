@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Đăng bài viết mới{% endblock %}
+
+{% block content %}
+<h2>Đăng bài viết mới</h2>
+<form method="POST" enctype="multipart/form-data">
+    <label for="title">Tiêu đề:</label><br>
+    <input type="text" name="title" required><br><br>
+
+    <label for="content">Nội dung:</label><br>
+    <textarea name="content" rows="6" cols="40" required></textarea><br><br>
+
+    <label for="attachment">Đính kèm file (tùy chọn):</label><br>
+    <input type="file" name="attachment"><br><br>
+
+    <button type="submit">Đăng bài</button>
+</form>
+<a href="{{ url_for('dashboard') }}">Quay lại Dashboard</a>
+{% endblock %}

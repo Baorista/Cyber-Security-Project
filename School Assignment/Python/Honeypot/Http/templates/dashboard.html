@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Xin chào {{ username }}!</h2>
+<form action="{{ url_for('search') }}" method="get">
+    <input type="text" name="q" placeholder="Tìm kiếm bài viết">
+    <input type="submit" value="Tìm">
+</form>
+{% endblock %}
+
+

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title }}{% endblock %}
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+    {% if post.filename %}
+    <p>File đính kèm: 
+    <a href="{{ url_for('uploaded_file', filename=post.filename) }}" target="_blank">{{post.filename }}</a>
+    </p>
+{% endif %}
+    <a href="{{ url_for('home') }}">← Về trang chủ</a>
+{% endblock %}
+
